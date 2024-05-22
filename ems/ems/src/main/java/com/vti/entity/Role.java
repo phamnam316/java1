@@ -1,0 +1,26 @@
+package com.vti.entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.UuidGenerator;
+
+import java.util.UUID;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "roles")
+public class Role {
+    @Id
+    @UuidGenerator
+    @Column(name = "id")
+    private UUID id;
+    @Column(name = "name")
+    private String name;
+}
